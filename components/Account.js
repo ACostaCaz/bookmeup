@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '../utils/supabaseClient'
+import { supabaseSignOut } from '../utils/supabaseSignOut'
 
 export default function Account({ session }) {
   const [loading, setLoading] = useState(true)
   const [username, setUsername] = useState(null)
   const [website, setWebsite] = useState(null)
   const [avatar_url, setAvatarUrl] = useState(null)
-
   useEffect(() => {
     getProfile()
   }, [session])
@@ -39,30 +39,12 @@ export default function Account({ session }) {
   }
 
   async function updateProfile({ username, website, avatar_url }) {
-    try {
-      setLoading(true)
-      const user = supabase.auth.user()
-
-      const updates = {
-        id: user.id,
-        username,
-        website,
-        avatar_url,
-        updated_at: new Date(),
-      }
-
-      let { error } = await supabase.from('profiles').upsert(updates, {
-        returning: 'minimal', // Don't return the value after inserting
-      })
-
-      if (error) {
-        throw error
-      }
-    } catch (error) {
-      alert(error.message)
-    } finally {
-      setLoading(false)
-    }
+    const token = session.access_token
+    fetch('/api/updateProfile', {
+      method: 'POST',
+      headers: new Headers({ 'Content-Type': 'application/json' }),
+      body: JSON.stringify({ username, website, avatar_url }),
+    })
   }
 
   return (
@@ -101,7 +83,7 @@ export default function Account({ session }) {
       </div>
 
       <div>
-        <button className="button block" onClick={() => supabase.auth.signOut()}>
+        <button className="button block" onClick={() => supabaseSignOut()}>
           Sign Out
         </button>
       </div>

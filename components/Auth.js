@@ -1,32 +1,21 @@
 import { useState } from 'react'
-import { supabase } from '../utils/supabaseClient'
+import { supabaseEmailSignIn } from '../utils/supabaseEmailSignIn'
+import { supabaseEmailSignUp } from '../utils/supabaseEmailSignUp'
+import { signInWithGoogle } from '../utils/supabaseGoogleSignIn'
 
 export default function Auth() {
     const [loading, setLoading] = useState(false)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const handleLogin = async (email, password) => {
-        try {
-            setLoading(true)
-            const { error } = await supabase.auth.signIn({
-                email: email,
-                password: password
-            })
-            if (error) throw error
-            alert('Check your email for the login link!')
-        } catch (error) {
-            alert(error.error_description || error.message || email || password)
-        } finally {
-            setLoading(false)
-        }
+    const handleSignUp = async (email, password) => {
+        supabaseEmailSignUp(email, password, setLoading)
     }
 
-    async function signInWithGoogle() {
-        const { user, session, error } = await supabase.auth.signIn({
-            provider: 'google',
-        })
+    const handleSignIn = async (email, password) => {
+        supabaseEmailSignIn(email, password, setLoading)
     }
+
     return (
         <div className="row flex flex-center">
             <div className="col-6 form-widget">
@@ -52,7 +41,7 @@ export default function Auth() {
                     <button
                         onClick={(e) => {
                             e.preventDefault()
-                            handleLogin(email, password)
+                            handleSignIn(email, password)
                         }}
                         className="button block"
                         disabled={loading}

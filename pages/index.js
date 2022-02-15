@@ -1,22 +1,29 @@
-import { useState, useEffect } from 'react'
-import { supabase } from '../utils/supabaseClient'
-import Auth from '../components/Auth'
-import Account from '../components/Account'
-
+import { supabaseSignOut } from "../utils/supabaseSignOut";
+import { supabase } from "../utils/supabaseClient";
+import { useUser } from "../context/auth";
+import Account from "../components/Account";
+import { useEffect } from "react";
+import axios from "axios";
 export default function Home() {
-  const [session, setSession] = useState(null)
+
+  const { user } = useUser()
+  const session = supabase.auth.session()
 
   useEffect(() => {
-    setSession(supabase.auth.session())
-
-    supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session)
+    axios.post("/api/auth", {
+      event: user ? 'SIGNED_IN' : 'SIGNED_OUT',
+      session: session
     })
-  }, [])
+  }, [user])
 
   return (
-    <div className="container" style={{ padding: '50px 0 100px 0' }}>
-      {!session ? <Auth /> : <Account key={session.user.id} session={session} />}
+    <div>
+      <h1>{user.email}</h1>
+      <Account session={session} />
+      <button
+        onClick={() => supabaseSignOut()}>
+        Log out
+      </button>
     </div>
   )
 }
