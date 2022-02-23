@@ -1,9 +1,10 @@
 import { supabaseSignOut } from "../utils/supabaseSignOut";
 import { supabase } from "../utils/supabaseClient";
 import { useUser } from "../context/auth";
-import Account from "../components/Account";
+import Auth from "../components/auth/Auth";
 import { useEffect } from "react";
 import axios from "axios";
+
 export default function Home() {
 
   const { user } = useUser()
@@ -18,8 +19,7 @@ export default function Home() {
 
   return (
     <div>
-      <h1>{user.email}</h1>
-      <Account session={session} />
+      <Auth session={session} />
       <button
         onClick={() => supabaseSignOut()}>
         Log out
