@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react'
 import { supabase } from '../utils/supabaseClient'
 import { supabaseSignOut } from '../utils/supabaseSignOut'
 
-export default function Account({ session }) {
+
+export default function Profile({ session }) {
   const [loading, setLoading] = useState(true)
   const [username, setUsername] = useState(null)
   const [website, setWebsite] = useState(null)
@@ -48,24 +49,22 @@ export default function Account({ session }) {
   }
 
   return (
-    <div className="form-widget">
+    <div>
       <div>
-        <label htmlFor="email">Email</label>
-        <input id="email" type="text" value={session.user.email} disabled />
+        <label>Email</label>
+        <input type="email" value={session.user.email} disabled />
       </div>
       <div>
-        <label htmlFor="username">Name</label>
+        <label>Name</label>
         <input
-          id="username"
           type="text"
           value={username || ''}
           onChange={(e) => setUsername(e.target.value)}
         />
       </div>
       <div>
-        <label htmlFor="website">Website</label>
+        <label>Website</label>
         <input
-          id="website"
           type="website"
           value={website || ''}
           onChange={(e) => setWebsite(e.target.value)}
@@ -74,7 +73,6 @@ export default function Account({ session }) {
 
       <div>
         <button
-          className="button block primary"
           onClick={() => updateProfile({ username, website, avatar_url })}
           disabled={loading}
         >
@@ -83,7 +81,7 @@ export default function Account({ session }) {
       </div>
 
       <div>
-        <button className="button block" onClick={() => supabaseSignOut()}>
+        <button onClick={() => supabaseSignOut()}>
           Sign Out
         </button>
       </div>
