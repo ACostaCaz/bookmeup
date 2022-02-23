@@ -12,30 +12,12 @@ export default function Account({ session }) {
   }, [session])
 
   async function getProfile() {
-    try {
-      setLoading(true)
-      const user = supabase.auth.user()
-
-      let { data, error, status } = await supabase
-        .from('profiles')
-        .select(`username, website, avatar_url`)
-        .eq('id', user.id)
-        .single()
-
-      if (error && status !== 406) {
-        throw error
-      }
-
-      if (data) {
-        setUsername(data.username)
-        setWebsite(data.website)
-        setAvatarUrl(data.avatar_url)
-      }
-    } catch (error) {
-      alert(error.message)
-    } finally {
-      setLoading(false)
-    }
+    const username = "Alex27loko"
+    fetch('/api/getUserProfile', {
+      method: 'POST',
+      headers: new Headers({ 'Content-Type': 'application/json' }),
+      body: JSON.stringify({ username }),
+    })
   }
 
   async function updateProfile({ username, website, avatar_url }) {

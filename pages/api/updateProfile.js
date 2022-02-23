@@ -24,6 +24,8 @@ const handler = async (req, res) => {
 
     if (error) {
       throw error
+    } else {
+      return res.status(200).send("OK")
     }
   } catch (error) {
     return res.status(401).send("Error updating profile")
