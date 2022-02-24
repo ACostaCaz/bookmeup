@@ -1,16 +1,21 @@
+import Link from 'next/link'
 import styles from '../../styles/important_information/important_information.module.css'
 import Important_Icon from '../../styles/important_information/information_icon'
 
-export default function Important_Info(props) {
+export default function Important_Info({ information, href }) {
     return (
         <div id={styles.information_box}>
             <section>
-                <Important_Icon/>
+                <Important_Icon />
             </section>
             <section>
-                <p>{props.information[0]}{" "}
-                {props.information[1]}{" "}
-                {props.information[2]}</p>
+                <p>
+                    {information[0]}
+                    <Link href={href}>
+                        <a>{information[1]}</a>
+                    </Link>
+                    {information[2]}
+                </p>
             </section>
         </div>
     )

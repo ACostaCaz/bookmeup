@@ -19,7 +19,9 @@ export default function Auth() {
         <form>
             <div>
                 <h2>Sign-In</h2>
-                <p>Connect to our services filling the following information:</p>
+                <p>
+                    Connect to our services filling the following information:
+                </p>
             </div>
 
             <div>
@@ -41,7 +43,10 @@ export default function Auth() {
             </div>
 
             <div id="password_fields">
-                <label id="checkbox_label"><input type="checkbox"/>Remember me.</label>
+                <label id="checkbox_label">
+                    <input type="checkbox" />
+                    Remember me.
+                </label>
                 <a href="./">Forgot password?</a>
             </div>
 
@@ -65,12 +70,21 @@ export default function Auth() {
                     disabled={loading}
                 >
                     <Google_Icon />
-                    <span id={styles.log_google_text}>{loading ? 'Loading' : 'Sign in with Google'}</span>
+                    <span id={styles.log_google_text}>
+                        {loading ? 'Loading' : 'Sign in with Google'}
+                    </span>
                 </button>
             </div>
 
             <div>
-                <Important information={["Do you want to make your own business?", <a href="./register">Create an account</a>, "and make your clients reach you easily!"]}/>
+                <Important
+                    information={[
+                        'Do you want to make your own business? ',
+                        'Create account',
+                        ' and make your clients reach you easily!',
+                    ]}
+                    href="/register"
+                />
             </div>
         </form>
     )

@@ -1,15 +1,12 @@
-import Layout from '../components/Layout'
+import Layout from '../components/PrivateRoute'
 import Provider from '../context/auth'
 import '../styles/globals.css'
 function MyApp({ Component, pageProps }) {
-
-  return (
-    <Provider>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </Provider>
-  )
+    return (
+        <Provider>
+            <Component {...pageProps} />
+        </Provider>
+    )
 }
 
 export default MyApp
