@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import { supabaseEmailSignIn } from '../../utils/supabaseEmailSignIn'
 import { supabaseEmailSignUp } from '../../utils/supabaseEmailSignUp'
 import styles from '../../styles/auth/register.module.css'
 
-export default function Register() {
+export default function RegisterForm() {
     const [loading, setLoading] = useState(false)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -16,7 +15,10 @@ export default function Register() {
         <form>
             <div>
                 <h2>Registration</h2>
-                <p>You will connect to our services using the following information:</p>
+                <p>
+                    You will connect to our services using the following
+                    information:
+                </p>
             </div>
 
             <div>
@@ -38,9 +40,20 @@ export default function Register() {
             </div>
 
             <div id={styles.checkbox_panel}>
-                <label id="checkbox_label"><input type="checkbox"/>*Do you want to receive an email whenever a client books for your services?.</label>
-                <label id="checkbox_label"><input type="checkbox"/>*Do you want to receive news and information about our products?.</label>
-                <label id="checkbox_label"><input type="checkbox" required/>Do you agree with our <a>Terms and Services?</a></label>
+                <label id="checkbox_label">
+                    <input type="checkbox" />
+                    *Do you want to receive an email whenever a client books for
+                    your services?.
+                </label>
+                <label id="checkbox_label">
+                    <input type="checkbox" />
+                    *Do you want to receive news and information about our
+                    products?.
+                </label>
+                <label id="checkbox_label">
+                    <input type="checkbox" required />
+                    Do you agree with our <a>Terms and Services?</a>
+                </label>
             </div>
 
             <div id="form_buttons">
@@ -54,7 +67,6 @@ export default function Register() {
                     <span>{loading ? 'Loading' : 'Register'}</span>
                 </button>
             </div>
-
         </form>
     )
 }

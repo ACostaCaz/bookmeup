@@ -12,5 +12,5 @@ export default function PrivateRoute({ children }) {
         }
     }, [user])
 
-    return children
+    return user ? children : <></>
 }

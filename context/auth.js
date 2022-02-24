@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect, useContext } from 'react'
 import { supabase } from '../utils/supabaseClient'
+import axios from 'axios'
 const AuthContext = createContext()
 
 const Provider = ({ children }) => {
