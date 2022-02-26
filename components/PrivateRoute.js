@@ -3,11 +3,12 @@ import { useEffect } from 'react'
 import { useUser } from '../context/auth'
 
 export default function PrivateRoute({ children }) {
-    const { user } = useUser()
+    const { user, setLastRoute } = useUser()
     const router = useRouter()
 
     useEffect(() => {
         if (!user) {
+            setLastRoute(router.asPath)
             router.push('/login')
         }
     }, [user])

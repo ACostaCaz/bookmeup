@@ -1,9 +1,9 @@
-import { supabaseSignOut } from '../utils/supabaseSignOut'
-import { supabase } from '../utils/supabaseClient'
-import { useUser } from '../context/auth'
-import { useEffect } from 'react'
-import axios from 'axios'
+import PrivateRoute from '../components/PrivateRoute'
 
 export default function Prueba() {
-    return <h1>Prueba</h1>
+    return (
+        <PrivateRoute>
+            <h1>Prueba</h1>
+        </PrivateRoute>
+    )
 }

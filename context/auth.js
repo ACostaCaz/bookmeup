@@ -5,7 +5,7 @@ const AuthContext = createContext()
 
 const Provider = ({ children }) => {
     const [user, setUser] = useState(supabase.auth.user())
-
+    const [lastRoute, setLastRoute] = useState('/')
     useEffect(() => {
         supabase.auth.onAuthStateChange(() => {
             setUser(supabase.auth.user())
@@ -13,6 +13,8 @@ const Provider = ({ children }) => {
     }, [])
     const exposed = {
         user,
+        lastRoute,
+        setLastRoute,
     }
     return (
         <AuthContext.Provider value={exposed}>{children}</AuthContext.Provider>
