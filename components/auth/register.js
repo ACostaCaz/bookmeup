@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { supabaseEmailSignUp } from '../../utils/supabaseEmailSignUp'
 import styles from '../../styles/auth/register.module.css'
-import { importantInfo } from '../information/importantInfo'
+import importantInfo from '../information/importantInfo'
 
 export default function RegisterForm() {
     const [loading, setLoading] = useState(false)

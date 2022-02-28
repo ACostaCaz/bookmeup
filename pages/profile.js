@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { Nav } from '../components/nav/Nav'
+import Nav from '../components/nav/Nav'
 import { useState } from 'react'
-import { PrivateRoute } from '../components/PrivateRoute'
+import PrivateRoute from '../components/PrivateRoute'
 
 export default function profile() {
     const [loading, setLoading] = useState(false)
