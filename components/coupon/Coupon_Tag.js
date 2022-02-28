@@ -3,7 +3,7 @@ import Delete_Icon from '../../styles/coupon/delete_icon'
 
 export default function Coupon_Tag({ name, discount }) {
     return (
-        <div id={styles.coupon_tag} tabindex="0">
+        <div id={styles.coupon_tag} tabIndex="0">
             <div id={styles.left_border}></div>
             <div id={styles.coupon_main}>
                 <section>

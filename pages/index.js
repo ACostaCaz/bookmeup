@@ -20,7 +20,7 @@ export default function Home() {
                 <main>
                     <div id="coupons_head">
                         <h2>Coupons</h2>
-                        <Link href="./coupon_form">
+                        <Link href="/coupon_form">
                             <button>+</button>
                         </Link>
                     </div>
