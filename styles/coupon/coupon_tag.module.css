@@ -1,0 +1,63 @@
+#coupon_tag {
+    border: 1.5px solid #A8C0FF;
+    border-radius: 5px;
+    width: 300px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#coupon_tag h1 {
+    font-weight: normal;
+    font-size: medium;
+    text-transform: uppercase;
+}
+
+#left_border {
+    background-color: #A8C0FF;
+    width: 5px;
+}
+
+#coupon_main {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 15px;
+}
+
+#coupon_body, #coupon_foot {
+    display: flex;
+    flex-flow: column nowrap;
+    display: none;
+}
+
+#coupon_foot {
+    align-self: flex-end;
+    background-color: #6792FF;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+}
+
+#coupon_tag:focus {
+    border: 1.5px solid #6792FF;
+    color: #6792FF;
+    box-shadow: 0px 2px 4px 2px rgb(0,0,0,0.15);
+}
+
+#coupon_tag:focus {
+    fill: "#A8C0FF";
+}
+
+#coupon_tag:focus #left_border {
+    background-color: #6792FF;
+}
+
+#coupon_tag:focus #coupon_body, #coupon_tag:focus #coupon_foot {
+    display: block;
+}
+
+#coupon_delete_icon {
+    border: 1.5px solid #6792FF;
+    background: black;
+}

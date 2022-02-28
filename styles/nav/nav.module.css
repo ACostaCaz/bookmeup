@@ -1,0 +1,29 @@
+#nav_str {
+    width: 100vw;
+    padding-block: 10px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    border-top: 2px solid #E7E7E7;
+    gap: 30px;
+    bottom: 0;
+    background-color: #F8F8F8;
+    position: fixed;
+}
+
+#nav_icon {
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    transition: background-color 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+#nav_icon:hover {
+    background-color: #E7E7E7;
+}
+
+#nav_icon:active {
+    background-color: #E7E7E7;
+}

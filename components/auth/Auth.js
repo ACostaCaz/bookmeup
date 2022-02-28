@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { supabaseEmailSignIn } from '../../utils/supabaseEmailSignIn'
 import { signInWithGoogle } from '../../utils/supabaseGoogleSignIn'
-import Important from '../information/important_info'
+import Important_Info from '../information/Important_Info.js'
 import Google_Icon from '../../styles/auth/google_icon.js'
 import styles from '../../styles/auth/sign_in.module.css'
 
@@ -76,11 +76,11 @@ export default function Auth() {
             </div>
 
             <div>
-                <Important
+                <Important_Info
                     information={[
                         'Do you want to make your own business? ',
                         'Create account',
-                        ' and make your clients reach you easily!',
+                        ' and start creating coupons!',
                     ]}
                     href="/register"
                 />
