@@ -1,8 +1,9 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { useState } from 'react'
 import PrivateRoute from '../components/PrivateRoute'
 import styles from '../styles/auth/register.module.css'
 
-export default function coupon_form() {
+export default function couponForm() {
     const [loading, setLoading] = useState(false)
     const [couponCode, setCouponCode] = useState()
     const [discount, setDiscount] = useState()
