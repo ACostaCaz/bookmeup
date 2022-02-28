@@ -2,7 +2,7 @@ import Link from 'next/link'
 import styles from '../../styles/important_information/important_information.module.css'
 import Important_Icon from '../../styles/important_information/information_icon'
 
-export default function Important_Info({ information, href }) {
+export default function importantInfo({ information, href }) {
     return (
         <div id={styles.information_box}>
             <section>
