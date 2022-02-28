@@ -1,4 +1,4 @@
-import Nav from '../components/nav/nav.js'
+import Nav from '../components/nav/Nav'
 import Coupon_Tag from '../components/coupon/Coupon_Tag.js'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'

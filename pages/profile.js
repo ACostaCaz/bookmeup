@@ -1,4 +1,4 @@
-import { Nav } from '../components/nav/nav'
+import { Nav } from '../components/nav/Nav'
 import { useState } from 'react'
 import { PrivateRoute } from '../components/PrivateRoute'
 
