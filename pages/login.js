@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import Auth from '../components/auth/Auth'
+import { Auth } from '../components/auth/Auth'
 import { useUser } from '../context/auth'
 import { useRouter } from 'next/router'
 export default function Login() {

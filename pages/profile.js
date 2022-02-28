@@ -1,6 +1,6 @@
-import Nav from '../components/nav/nav'
+import { Nav } from '../components/nav/nav'
 import { useState } from 'react'
-import PrivateRoute from '../components/PrivateRoute'
+import { PrivateRoute } from '../components/PrivateRoute'
 
 export default function Profile() {
     const [loading, setLoading] = useState(false)

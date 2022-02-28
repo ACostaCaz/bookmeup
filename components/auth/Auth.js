@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { supabaseEmailSignIn } from '../../utils/supabaseEmailSignIn'
 import { signInWithGoogle } from '../../utils/supabaseGoogleSignIn'
-import Important_Info from '../information/Important_Info.js'
+import { Important_Info } from '../information/Important_Info.js'
 import Google_Icon from '../../styles/auth/google_icon.js'
 import styles from '../../styles/auth/sign_in.module.css'
 
