@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable @next/next/link-passhref */
 import Nav from '../components/nav/Nav'
 import Coupon_Tag from '../components/coupon/Coupon_Tag.js'

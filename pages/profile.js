@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { Nav } from '../components/nav/Nav'
 import { useState } from 'react'
 import { PrivateRoute } from '../components/PrivateRoute'

@@ -10,6 +10,7 @@ export default function login() {
         if (user) {
             router.push(lastRoute)
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [user])
 
     return <Auth />
