@@ -2,7 +2,7 @@ import { Nav } from '../components/nav/Nav'
 import { useState } from 'react'
 import { PrivateRoute } from '../components/PrivateRoute'
 
-export default function Profile() {
+export default function profile() {
     const [loading, setLoading] = useState(false)
     const [name, setName] = useState()
     const [key, setKey] = useState()

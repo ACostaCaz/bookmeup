@@ -1,10 +1,11 @@
+/* eslint-disable @next/next/link-passhref */
 import Nav from '../components/nav/Nav'
 import Coupon_Tag from '../components/coupon/Coupon_Tag.js'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import PrivateRoute from '../components/PrivateRoute'
 
-export default function Home() {
+export default function home() {
     const [coupons, setCoupons] = useState([])
     useEffect(() => {
         fetch('/api/getUserCoupons', {
